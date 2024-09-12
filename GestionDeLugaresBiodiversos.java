@@ -7,7 +7,7 @@ public class GestionDeLugaresBiodiversos {
 	private Scanner escaner;
 	private static boolean flag;
 
-	private Menu() {
+	private GestionDeLugaresBiodiversos() {
 		escaner = new Scanner(System.in);
 	}
 	
@@ -17,10 +17,10 @@ public class GestionDeLugaresBiodiversos {
 
 		while (!flag) {
 
-            system.out.println("Bienvenido voluntario a la aplicación de Gestión de Lugares Biodiversos COP 16 Cali - Colombia.")
+            System.out.println("Bienvenido voluntario a la aplicación de Gestión de Lugares Biodiversos COP 16 Cali - Colombia.");
 			System.out.println("\n \n What do you want to do today in this program? \n");
 			System.out.println("Enter:\n" + "1. To register a place with biological diversity (1) \n" + "2.To consult, according to a given department, the average budgets of biodiverse places (2)\n"
-					+"3. To exit the program (3) \n");
+							   +"3. To exit the program (3) \n");
 
 			int option = escaner.nextInt();
 
@@ -29,16 +29,17 @@ public class GestionDeLugaresBiodiversos {
 			switch (option) {
 					case 1:
 						System.out.println("Enter the name of the biodiverse place");
-                            String biodiversePlace: escaner.nextLine ()
-                        System.out.println("Enter the department in which the place is located");
-                            String department: escaner.nextLine ()
+                            String biodiversePlace= escaner.nextLine ();
+                        System.out.println("Enter the department in which the place is located (Valle, Chocó, Cauca o Nariño)");
+                            String department= escaner.nextLine ();
                          System.out.println("Enter the national budget granted for this place");
-                            String nationalBudget: escaner.nextLine ()
+                            String nationalBudget= escaner.nextLine ();
 
-                            System.out.println("Location successfully entered.")
+                            System.out.println("Location successfully entered.");
 						    break;
 					case 2:
-						opcionDos();
+						System.out.println("Select one of the four departments to review the budget average: Valle, Chocó, Cauca or Nariño");
+
 						    break;
 					case 3:
 						flag = true;
@@ -54,7 +55,7 @@ public class GestionDeLugaresBiodiversos {
 	}
 
 	public static void main(String[] args) {
-		Menu mainApp = new Menu();
+		GestionDeLugaresBiodiversos mainApp = new GestionDeLugaresBiodiversos();
 		mainApp.run(flag);
 	}
 
