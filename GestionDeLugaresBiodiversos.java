@@ -2,80 +2,102 @@ package ui;
 
 import java.util.Scanner;
 
+class LugarBiodiverso {
+    String nombreLugar;
+    String departamentoLugar;
+    Double presupuestoLugar;
+
+    LugarBiodiverso(String nombreLugar, String departamentoLugar, Double presupuestoLugar) {
+        nombreLugar = nombreLugar;
+        departamentoLugar = departamentoLugar;
+        presupuestoLugar = presupuestoLugar;
+    }
+}
+
 public class GestionDeLugaresBiodiversos {
-    // Atributos de la clase Ejecutable
-	private Scanner escaner;
-	private static boolean flag;
+    private Scanner escaner;
+    private LugarBiodiverso[] lugares;
+    private int contadorLugares;
 
-	private GestionDeLugaresBiodiversos() {
-		escaner = new Scanner(System.in);
-	}
-	
-	public void run(boolean flag)
-	{
-		flag = false;
-
-		while (!flag) {
-
-            System.out.println("Bienvenido voluntario a la aplicación de Gestión de Lugares Biodiversos COP 16 Cali - Colombia.");
-			System.out.println("\n \n What do you want to do today in this program? \n");
-			System.out.println("Enter:\n" + "1. To register a place with biological diversity (1) \n" + "2.To consult, according to a given department, the average budgets of biodiverse places (2)\n"
-							   +"3. To exit the program (3) \n");
-
-			int option = escaner.nextInt();
-
-			escaner.nextLine();
-
-			switch (option) {
-					case 1:
-						System.out.println("Enter the name of the biodiverse place");
-                            String biodiversePlace= escaner.nextLine ();
-                        System.out.println("Enter the department in which the place is located (Valle, Chocó, Cauca o Nariño)");
-                            String department= escaner.nextLine ();
-                         System.out.println("Enter the national budget granted for this place");
-                            String nationalBudget= escaner.nextLine ();
-
-                            System.out.println("Location successfully entered.");
-						    break;
-					case 2:
-						System.out.println("Select one of the four departments to review the budget average: Valle, Chocó, Cauca or Nariño");
-
-						    break;
-					case 3:
-						flag = true;
-						System.exit(0);
-						    break;
-					default:
-						System.out.print("Por favor ingrese una opcion valida");
-						    continue;
-			}
-
-		}
-
-	}
-
-	public static void main(String[] args) {
-		GestionDeLugaresBiodiversos mainApp = new GestionDeLugaresBiodiversos();
-		mainApp.run(flag);
-	}
-
-    public void opcionUno() {
-        System.out.println("Elegiste opcion uno");
+    GestionDeLugaresBiodiversos() {
+        escaner = new Scanner(System.in);
+        lugares = new LugarBiodiverso[10]; // Maximo 10 lugares
+        contadorLugares = 0;
     }
 
-    public void opcionDos() {
-        System.out.println("Elegiste opcion dos");
+    public void run() {
+        boolean flag = false;
+        while (!flag) {
+            System.out.println("Bienvenido voluntario a la aplicacion de Gestion de Lugares Biodiversos COP 16 Cali - Colombia.");
+            System.out.println("Que deseas hacer hoy en este programa?");
+            System.out.println("1. Registrar un lugar con diversidad biologica");
+            System.out.println("2. Consultar el promedio de presupuestos por departamento");
+            System.out.println("3. Salir del programa");
+
+            int opcion = escaner.nextInt();
+            escaner.nextLine(); // Consumir la nueva linea
+
+            switch (opcion) {
+                case 1:
+                    registrarLugar();
+                    break;
+                case 2:
+                    consultarPromedio();
+                    break;
+                case 3:
+                    flag = true;
+                    System.out.println("Gracias por usar el sistema.");
+                    break;
+                default:
+                    System.out.println("Por favor ingrese una opcion valida.");
+                    break;
+            }
+        }
     }
 
-    public void opcionTres() {
-        System.out.println("Elegiste opcion tres");
+    private void registrarLugar() {
+        if (contadorLugares < 10) {
+            System.out.println("Ingresa el nombre del lugar biodiverso:");
+            String nombre = escaner.nextLine();
+            System.out.println("Ingresa el departamento en el cual esta el lugar (Valle, Choco, Cauca o Nariño):");
+            String departamento = escaner.nextLine().toLowerCase(); // Ignorar mayusculas
+            System.out.println("Ingresa el presupuesto nacional otorgado para este lugar:");
+            Double presupuesto = escaner.nextDouble();
+            escaner.nextLine(); // Consumir la nueva linea
+
+            lugares[contadorLugares] = new LugarBiodiverso(nombre, departamento, presupuesto);
+            contadorLugares++;
+            System.out.println("Lugar ingresado con exito.");
+        } else {
+            System.out.println("No se pueden registrar mas lugares. Limite alcanzado.");
+        }
     }
 
-    public void opcionCuatro() {
-        System.out.println("Elegiste opcion cuatro");
+    private void consultarPromedio() {
+        System.out.println("Selecciona uno de los cuatro departamentos para revisar el promedio presupuestal: Valle, Choco, Cauca o Nariño");
+        String departamento = escaner.nextLine().toLowerCase(); // Ignorar mayusculas
+
+        double sumaPresupuestos = 0.0;
+        int contador = 0;
+
+        for (int i = 0; i < contadorLugares; i++) {
+            if (lugares[i].departamentoLugar.equals(departamento)) {
+                sumaPresupuestos += lugares[i].presupuestoLugar;
+                contador++;
+            }
+        }
+
+        if (contador > 0) {
+            double promedio = sumaPresupuestos / contador;
+            String mensajePromedio = "El promedio presupuestal para el departamento de " + departamento + " es de " + promedio + " COP";
+            System.out.println(mensajePromedio);
+        } else {
+            System.out.println("No se encontraron lugares registrados en el departamento de " + departamento);
+        }
     }
 
-	
-
-	
+    public static void main(String[] args) {
+        GestionDeLugaresBiodiversos mainApp = new GestionDeLugaresBiodiversos();
+        mainApp.run();
+    }
 }
