@@ -1,20 +1,29 @@
 package model;
 
 public class Referee extends Person {
-    private String type; // Central o Asistente
+    private TypeR type; // Central o Asistente
 
-    public Referee(String name, String country, String id, String type) {
+    public Referee(String name, String country, String id, TypeR type) {
         super(name, country, id);
         this.type = type;
     }
 
     @Override
     public void showInfo() {
-        System.out.println("Referee [Name=" + name + ", Country=" + country + ", Type=" + type + "]");
+        System.out.println("Referee [Name=" + getName() + ", Country=" + getCountry() + ", Type=" + type + "]");
     }
 
     @Override
     public String toString() {
-        return "Referee [ID=" + id + ", Name=" + name + ", Country=" + country + ", Type=" + type + "]";
+        return "Referee [ID=" + getId() + ", Name=" + getName() + ", Country=" + getCountry() + ", Type=" + type + "]";
+    }
+
+    // Getters and setters for the referee type
+    public TypeR getType() {
+        return type;
+    }
+
+    public void setType(TypeR type) {
+        this.type = type;
     }
 }

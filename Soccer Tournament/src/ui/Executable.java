@@ -1,6 +1,8 @@
 package ui;
-
 import java.util.Scanner;
+
+import javax.swing.text.Position;
+
 import model.Controller;
 
 public class Executable {
@@ -77,21 +79,31 @@ public class Executable {
         String coachName = scanner.nextLine();
         System.out.println("Enter team country: ");
         String coachCountry = scanner.nextLine();
-        
-        Coach newCoach= new Coach(coachName, coachCountry);
 
-        Team newTeam= new Team(name, country, newCoach);
-
-        controller.addTeam(newTeam);
-        System.out.println("Team registered successfully");
     }
 
      public void registerPlayer() {
-        // Implementar el registro de jugadores
+        System.out.println("What team does it belong to?");
+        String Team = scanner.nextLine();
+        System.out.println("Enter the ID (Shirt Number)");
+        String id = scanner.nextLine();
+        System.out.println("Enter team name: ");
+        String name = scanner.nextLine();
+        System.out.println("Enter Position: ");
+        String Position= scanner.nextLine().toUpperCase();
+        System.out.println("Enter team country: ");
+        String country = scanner.nextLine();
     }
 
     public void registerReferee() {
-        // Implementar el registro de árbitros
+        System.out.println("Enter the ID");
+        String id = scanner.nextLine();
+        System.out.println("Enter the name : ");
+        String name = scanner.nextLine();
+        System.out.println("Enter the country");
+        String Country = scanner.nextLine();
+        System.out.println("What type of referee is he? : ");
+        String TypeR = scanner.nextLine().toUpperCase();
     }
 
     public void informationTeam() {

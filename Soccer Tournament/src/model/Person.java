@@ -3,9 +3,9 @@ package model;
 public abstract class Person {
 
 
-	 private String name;
-	 private String country;
-	 private String id; 
+	 protected String name;
+	 protected String country;
+	 protected String id; 
 
 	 public Person(String name, String country, String id) {
 	 	this.name = name;
