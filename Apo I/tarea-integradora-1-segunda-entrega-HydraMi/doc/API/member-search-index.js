@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"ui","c":"BiodiversityPlaceManagement","l":"BiodiversityPlaceManagement()","u":"%3Cinit%3E()"},{"p":"ui","c":"BiodiversityPlaceManagement","l":"main(String[])","u":"main(java.lang.String[])"},{"p":"ui","c":"BiodiversityPlaceManagement","l":"run()"}];updateSearchResults();
