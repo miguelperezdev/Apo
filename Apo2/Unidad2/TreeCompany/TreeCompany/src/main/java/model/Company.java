@@ -170,57 +170,66 @@ public class Company {
     }
 
     private void remove(Employee empRem) {
-        // Caso 1: Nodo hoja
-        if(empRem.getLeft() == null && empRem.getRight() == null) {
-            if(empRem.getParent() == null) {
+        Employee parent = empRem.getParent();
+
+        // Caso 1: Nodo hoja (sin hijos)
+        if (empRem.getLeft() == null && empRem.getRight() == null) {
+            if (parent == null) {
                 root = null; // Era el único nodo
             } else {
-                if(empRem.getParent().getLeft() == empRem) {
-                    empRem.getParent().setLeft(null);
+                if (parent.getLeft() == empRem) {
+                    parent.setLeft(null);
                 } else {
-                    empRem.getParent().setRight(null);
+                    parent.setRight(null);
                 }
             }
         }
-        // Caso 2: Tiene solo hijo izquierdo
-        else if(empRem.getRight() == null) {
-            if(empRem.getParent() == null) {
+
+        // Caso 2: Solo tiene hijo izquierdo
+        else if (empRem.getRight() == null) {
+            if (parent == null) {
                 root = empRem.getLeft();
                 root.setParent(null);
             } else {
-                if(empRem.getParent().getLeft() == empRem) {
-                    empRem.getParent().setLeft(empRem.getLeft());
+                if (parent.getLeft() == empRem) {
+                    parent.setLeft(empRem.getLeft());
                 } else {
-                    empRem.getParent().setRight(empRem.getLeft());
+                    parent.setRight(empRem.getLeft());
                 }
-                empRem.getLeft().setParent(empRem.getParent());
+                empRem.getLeft().setParent(parent);
             }
         }
-        // Caso 3: Tiene solo hijo derecho
-        else if(empRem.getLeft() == null) {
-            if(empRem.getParent() == null) {
+
+        // Caso 3: Solo tiene hijo derecho
+        else if (empRem.getLeft() == null) {
+            if (parent == null) {
                 root = empRem.getRight();
                 root.setParent(null);
             } else {
-                if(empRem.getParent().getLeft() == empRem) {
-                    empRem.getParent().setLeft(empRem.getRight());
+                if (parent.getLeft() == empRem) {
+                    parent.setLeft(empRem.getRight());
                 } else {
-                    empRem.getParent().setRight(empRem.getRight());
+                    parent.setRight(empRem.getRight());
                 }
-                empRem.getRight().setParent(empRem.getParent());
+                empRem.getRight().setParent(parent);
             }
         }
+
         // Caso 4: Tiene ambos hijos
         else {
+            // Buscar el sucesor (el más pequeño del subárbol derecho)
             Employee successor = minimum(empRem.getRight());
-            // Copiar los datos del sucesor
+
+            // Copiar los datos del sucesor al nodo a eliminar
             empRem.setId(successor.getId());
             empRem.setName(successor.getName());
             empRem.setOffice(successor.getOffice());
+
             // Eliminar el sucesor (que será un caso 1 o 2)
             remove(successor);
         }
     }
+
 
     public int weight() {
         return weight(root);
