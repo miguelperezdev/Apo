@@ -1,0 +1,676 @@
+{
+    "routes": [
+        {
+            "estimatedTime": 11,
+            "distance": 23,
+            "start": "e",
+            "end": "f",
+            "id": "123123"
+        },
+        {
+            "estimatedTime": 5,
+            "distance": 11,
+            "start": "q",
+            "end": "w",
+            "id": "2313"
+        },
+        {
+            "estimatedTime": 8,
+            "distance": 17,
+            "start": "a",
+            "end": "z",
+            "id": "7890"
+        },
+        {
+            "estimatedTime": 15,
+            "distance": 30,
+            "start": "m",
+            "end": "n",
+            "id": "4567"
+        },
+        {
+            "estimatedTime": 4,
+            "distance": 3,
+            "start": "5",
+            "end": "HOLA",
+            "id": "2"
+        },
+        {
+            "estimatedTime": 120,
+            "distance": 33,
+            "start": "Punto 12",
+            "end": "Punto 17",
+            "id": "823152"
+        },
+        {
+            "estimatedTime": 30,
+            "distance": 20,
+            "start": "Punto 3",
+            "end": "Punto 9",
+            "id": "517986"
+        },
+        {
+            "estimatedTime": 100,
+            "distance": 12,
+            "start": "Punto 2",
+            "end": "Punto 5",
+            "id": "476253"
+        },
+        {
+            "estimatedTime": 120,
+            "distance": 45,
+            "start": "Punto 4",
+            "end": "Punto 10",
+            "id": "862096"
+        },
+        {
+            "estimatedTime": 40,
+            "distance": 10,
+            "start": "Punto 7",
+            "end": "Punto 8",
+            "id": "989083"
+        },
+        {
+            "estimatedTime": 120,
+            "distance": 33,
+            "start": "Punto 12",
+            "end": "Punto 17",
+            "id": "823152"
+        },
+        {
+            "estimatedTime": 60,
+            "distance": 20,
+            "start": "Punto 10",
+            "end": "Punto 13",
+            "id": "254118"
+        },
+        {
+            "estimatedTime": 100,
+            "distance": 41,
+            "start": "Punto 3",
+            "end": "Punto 9",
+            "id": "325741"
+        },
+        {
+            "estimatedTime": 30,
+            "distance": 25,
+            "start": "Punto 7",
+            "end": "Punto 12",
+            "id": "517986"
+        },
+        {
+            "estimatedTime": 60,
+            "distance": 15,
+            "start": "Punto 5",
+            "end": "Punto 10",
+            "id": "289434"
+        },
+        {
+            "estimatedTime": 90,
+            "distance": 22,
+            "start": "Punto 9",
+            "end": "Punto 11",
+            "id": "157429"
+        },
+        {
+            "estimatedTime": 120,
+            "distance": 33,
+            "start": "Punto 12",
+            "end": "Punto 17",
+            "id": "823152"
+        },
+        {
+            "estimatedTime": 30,
+            "distance": 20,
+            "start": "Punto 3",
+            "end": "Punto 9",
+            "id": "517986"
+        },
+        {
+            "estimatedTime": 100,
+            "distance": 12,
+            "start": "Punto 2",
+            "end": "Punto 5",
+            "id": "476253"
+        },
+        {
+            "estimatedTime": 120,
+            "distance": 45,
+            "start": "Punto 4",
+            "end": "Punto 10",
+            "id": "862096"
+        },
+        {
+            "estimatedTime": 40,
+            "distance": 10,
+            "start": "Punto 7",
+            "end": "Punto 8",
+            "id": "989083"
+        },
+        {
+            "estimatedTime": 120,
+            "distance": 33,
+            "start": "Punto 12",
+            "end": "Punto 17",
+            "id": "823152"
+        },
+        {
+            "estimatedTime": 60,
+            "distance": 20,
+            "start": "Punto 10",
+            "end": "Punto 13",
+            "id": "254118"
+        },
+        {
+            "estimatedTime": 100,
+            "distance": 41,
+            "start": "Punto 3",
+            "end": "Punto 9",
+            "id": "325741"
+        },
+        {
+            "estimatedTime": 30,
+            "distance": 25,
+            "start": "Punto 7",
+            "end": "Punto 12",
+            "id": "517986"
+        },
+        {
+            "estimatedTime": 60,
+            "distance": 15,
+            "start": "Punto 5",
+            "end": "Punto 10",
+            "id": "289434"
+        },
+        {
+            "estimatedTime": 90,
+            "distance": 22,
+            "start": "Punto 9",
+            "end": "Punto 11",
+            "id": "157429"
+        },
+        {
+            "estimatedTime": 120,
+            "distance": 33,
+            "start": "Punto 12",
+            "end": "Punto 17",
+            "id": "823152"
+        },
+        {
+            "estimatedTime": 30,
+            "distance": 20,
+            "start": "Punto 3",
+            "end": "Punto 9",
+            "id": "517986"
+        },
+        {
+            "estimatedTime": 100,
+            "distance": 12,
+            "start": "Punto 2",
+            "end": "Punto 5",
+            "id": "476253"
+        },
+        {
+            "estimatedTime": 120,
+            "distance": 45,
+            "start": "Punto 4",
+            "end": "Punto 10",
+            "id": "862096"
+        },
+        {
+            "estimatedTime": 40,
+            "distance": 10,
+            "start": "Punto 7",
+            "end": "Punto 8",
+            "id": "989083"
+        },
+        {
+            "estimatedTime": 120,
+            "distance": 33,
+            "start": "Punto 12",
+            "end": "Punto 17",
+            "id": "823152"
+        },
+        {
+            "estimatedTime": 60,
+            "distance": 20,
+            "start": "Punto 10",
+            "end": "Punto 13",
+            "id": "254118"
+        },
+        {
+            "estimatedTime": 100,
+            "distance": 41,
+            "start": "Punto 3",
+            "end": "Punto 9",
+            "id": "325741"
+        },
+        {
+            "estimatedTime": 30,
+            "distance": 25,
+            "start": "Punto 7",
+            "end": "Punto 12",
+            "id": "517986"
+        },
+        {
+            "estimatedTime": 60,
+            "distance": 15,
+            "start": "Punto 5",
+            "end": "Punto 10",
+            "id": "289434"
+        },
+        {
+            "estimatedTime": 90,
+            "distance": 22,
+            "start": "Punto 9",
+            "end": "Punto 11",
+            "id": "157429"
+        },
+        {
+            "estimatedTime": 120,
+            "distance": 33,
+            "start": "Punto 12",
+            "end": "Punto 17",
+            "id": "823152"
+        },
+        {
+            "estimatedTime": 30,
+            "distance": 20,
+            "start": "Punto 3",
+            "end": "Punto 9",
+            "id": "517986"
+        },
+        {
+            "estimatedTime": 100,
+            "distance": 12,
+            "start": "Punto 2",
+            "end": "Punto 5",
+            "id": "476253"
+        },
+        {
+            "estimatedTime": 120,
+            "distance": 45,
+            "start": "Punto 4",
+            "end": "Punto 10",
+            "id": "862096"
+        },
+        {
+            "estimatedTime": 40,
+            "distance": 10,
+            "start": "Punto 7",
+            "end": "Punto 8",
+            "id": "989083"
+        },
+        {
+            "estimatedTime": 120,
+            "distance": 33,
+            "start": "Punto 12",
+            "end": "Punto 17",
+            "id": "823152"
+        },
+        {
+            "estimatedTime": 60,
+            "distance": 20,
+            "start": "Punto 10",
+            "end": "Punto 13",
+            "id": "254118"
+        },
+        {
+            "estimatedTime": 100,
+            "distance": 41,
+            "start": "Punto 3",
+            "end": "Punto 9",
+            "id": "325741"
+        },
+        {
+            "estimatedTime": 30,
+            "distance": 25,
+            "start": "Punto 7",
+            "end": "Punto 12",
+            "id": "517986"
+        },
+        {
+            "estimatedTime": 60,
+            "distance": 15,
+            "start": "Punto 5",
+            "end": "Punto 10",
+            "id": "289434"
+        },
+        {
+            "estimatedTime": 90,
+            "distance": 22,
+            "start": "Punto 9",
+            "end": "Punto 11",
+            "id": "157429"
+        },
+        {
+            "estimatedTime": 120,
+            "distance": 33,
+            "start": "Punto 12",
+            "end": "Punto 17",
+            "id": "823152"
+        },
+        {
+            "estimatedTime": 30,
+            "distance": 20,
+            "start": "Punto 3",
+            "end": "Punto 9",
+            "id": "517986"
+        },
+        {
+            "estimatedTime": 100,
+            "distance": 12,
+            "start": "Punto 2",
+            "end": "Punto 5",
+            "id": "476253"
+        },
+        {
+            "estimatedTime": 120,
+            "distance": 45,
+            "start": "Punto 4",
+            "end": "Punto 10",
+            "id": "862096"
+        },
+        {
+            "estimatedTime": 40,
+            "distance": 10,
+            "start": "Punto 7",
+            "end": "Punto 8",
+            "id": "989083"
+        },
+        {
+            "estimatedTime": 120,
+            "distance": 33,
+            "start": "Punto 12",
+            "end": "Punto 17",
+            "id": "823152"
+        },
+        {
+            "estimatedTime": 60,
+            "distance": 20,
+            "start": "Punto 10",
+            "end": "Punto 13",
+            "id": "254118"
+        },
+        {
+            "estimatedTime": 100,
+            "distance": 41,
+            "start": "Punto 3",
+            "end": "Punto 9",
+            "id": "325741"
+        },
+        {
+            "estimatedTime": 30,
+            "distance": 25,
+            "start": "Punto 7",
+            "end": "Punto 12",
+            "id": "517986"
+        },
+        {
+            "estimatedTime": 60,
+            "distance": 15,
+            "start": "Punto 5",
+            "end": "Punto 10",
+            "id": "289434"
+        },
+        {
+            "estimatedTime": 90,
+            "distance": 22,
+            "start": "Punto 9",
+            "end": "Punto 11",
+            "id": "157429"
+        }
+    ],
+    "passengers": [
+        {
+            "assignedRoute": "2313",
+            "contact": "315343433",
+            "name": "juan",
+            "id": "126546"
+        },
+        {
+            "assignedRoute": "7890",
+            "contact": "312987654",
+            "name": "maria",
+            "id": "452345"
+        },
+        {
+            "assignedRoute": "123123",
+            "contact": "310765432",
+            "name": "pedro",
+            "id": "876543"
+        },
+        {
+            "assignedRoute": "4567",
+            "contact": "314567890",
+            "name": "sofia",
+            "id": "654321"
+        },
+        {
+            "assignedRoute": "Ruta2",
+            "contact": "3154322674",
+            "name": "Jose",
+            "id": "132532"
+        },
+        {
+            "assignedRoute": "Ruta2",
+            "contact": "3154322674",
+            "name": "Jose",
+            "id": "132532"
+        },
+        {
+            "assignedRoute": "Ruta2",
+            "contact": "3154322674",
+            "name": "Jose",
+            "id": "132532"
+        },
+        {
+            "assignedRoute": "Ruta2",
+            "contact": "3154322674",
+            "name": "Jose",
+            "id": "132532"
+        },
+        {
+            "assignedRoute": "Ruta2",
+            "contact": "3154322674",
+            "name": "Jose",
+            "id": "132532"
+        }
+    ],
+    "incidents": [
+        {
+            "dateTime": "2025-02-21T09:56",
+            "description": "robo en la esquina",
+            "location": "r",
+            "id": "1231",
+            "type": "robo",
+            "status": "RESOLVED"
+        },
+        {
+            "dateTime": "2025-03-10T14:30",
+            "description": "Accidente menor entre dos vehículos",
+            "location": "avenida central",
+            "id": "9876",
+            "type": "accidente",
+            "status": "PENDING"
+        },
+        {
+            "dateTime": "2025-03-12T18:45",
+            "description": "Objeto sospechoso en la estación",
+            "location": "estación sur",
+            "id": "5432",
+            "type": "sospechoso",
+            "status": "IN_PROCESS"
+        }
+    ],
+    "drivers": [
+        {
+            "name": "carlos",
+            "id": "1109",
+            "assignedVehicle": "2313",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "luis",
+            "id": "2208",
+            "assignedVehicle": "7890",
+            "status": "ON_ROUTE"
+        },
+        {
+            "name": "andrea",
+            "id": "3307",
+            "assignedVehicle": "4567",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "fernando",
+            "id": "4406",
+            "assignedVehicle": "123123",
+            "status": "ON_ROUTE"
+        },
+        {
+            "name": "",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "Andres",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "Andres",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "Andres",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "Andres",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "Andres",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "Andres",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "Andres",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "Andres",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "Andres",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "Andres",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        },
+        {
+            "name": "Andres",
+            "id": "246731",
+            "assignedVehicle": "car",
+            "status": "AVAILABLE"
+        }
+    ]
+}
