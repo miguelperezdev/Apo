@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RegisterController">
+   <children>
+      <TextField layoutX="46.0" layoutY="120.0" prefHeight="25.0" prefWidth="174.0" promptText="Last Name" />
+      <TextField layoutX="46.0" layoutY="155.0" prefHeight="25.0" prefWidth="174.0" promptText="Age" />
+      <TextField layoutX="46.0" layoutY="88.0" prefHeight="25.0" prefWidth="174.0" promptText="Name" />
+      <ComboBox layoutX="45.0" layoutY="188.0" prefHeight="25.0" prefWidth="174.0" promptText="Sexo" />
+      <TextField layoutX="46.0" layoutY="256.0" prefHeight="25.0" prefWidth="174.0" promptText="Semestre" />
+      <Button layoutX="395.0" layoutY="288.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="104.0" text="REGISTER" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label alignment="TOP_CENTER" layoutX="32.0" layoutY="15.0" prefHeight="38.0" prefWidth="268.0" text="Register Student ">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="45.0" layoutY="222.0" prefHeight="25.0" prefWidth="174.0" promptText="Carrera" />
+      <DatePicker layoutX="45.0" layoutY="287.0" prefHeight="25.0" prefWidth="174.0" promptText="Fecha de Ingreso" />
+      <ImageView fitHeight="205.0" fitWidth="268.0" layoutX="313.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Downloads/FotoRegis.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="347.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Downloads/logo%20icesi.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
