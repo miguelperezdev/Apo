@@ -18,14 +18,18 @@ public class Course {
         this.students = new LinkedList<>(); // List void
     }
 
-    public class addStudent (Student student){
-        if (students.size < size){
-
-
+    public boolean addStudent (Student student){
+        if (students.size() < size) {
+            students.add(student);
+            return true;
+        }else{
+            return false;
         }
-
     }
 
+    public LinkedList<Student> getStudents() {
+        return students;
+    }
     public String getName() {
         return name;
     }
