@@ -50,7 +50,7 @@ public class RegisterController {
     public void initialize() {
         // Inicializar ComboBoxes
         genderBox.getItems().addAll("Male", "Female", "Other");
-        majorBox.getItems().addAll("Engineering", "Medicine", "Law", "Business", "Arts");
+        majorBox.getItems().addAll("System_Engineer", "Telematic_Engineer");
 
         // Evento del botón de imagen
         browseImageButton.setOnAction(e -> loadImage());

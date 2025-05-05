@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/IntrojavaFX.iml" filepath="$PROJECT_DIR$/.idea/IntrojavaFX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Formularios/Formularios.iml" filepath="$PROJECT_DIR$/Formularios/Formularios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/RegisterStudentFX.iml" filepath="$PROJECT_DIR$/.idea/RegisterStudentFX.iml" />
     </modules>
   </component>
 </project>
