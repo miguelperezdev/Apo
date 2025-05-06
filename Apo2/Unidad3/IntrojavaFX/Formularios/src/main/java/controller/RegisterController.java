@@ -21,6 +21,7 @@ public class RegisterController {
     @FXML private TextField ageField;
     @FXML private ComboBox<String> genderBox;
     @FXML private ComboBox<String> majorBox;
+    @FXML private TextField email;
     @FXML private TextField semesterField;
     @FXML private DatePicker admissionDatePicker;
     @FXML private ImageView imagePreview;
@@ -58,7 +59,7 @@ public class RegisterController {
             int semester = Integer.parseInt(semesterField.getText());
             LocalDate admissionDate = admissionDatePicker.getValue();
             Image fxImage = imagePreview.getImage();
-            String email = generateEmail(name, lastName); // Simulado
+            String email = TextField.getText();
             String id = generateShortId(); // Simulado
 
             if (name.isEmpty() || lastName.isEmpty() || genderStr == null || majorStr == null || admissionDate == null || fxImage == null) {
