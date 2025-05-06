@@ -1,35 +1,73 @@
 package model;
 
-import java.util.LinkedList;
+import customexceptions.DuplicateStudentException;
+import customexceptions.QuotaEnrollExceededException;
+import javafx.scene.image.Image;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 
 public class Course {
 
     private String name;
     private String nrc;
-    private String classroom;
-    private int size ;
-    private LinkedList<Student> students;
+    private int group;
+    private int totalStu;
+    private int credits;
 
-    public Course(String name, String nrc, String classroom, int size) {
+    //Singleton
+    private static Course instance;
+    //Singleton https://refactoring.guru/es/design-patterns/singleton/java/example
+    public static Course getInstance() {
+        if (instance == null) {
+            instance = new Course("APO II", "11336", 5, 3);
+        }
+        return instance;
+    }
+
+    private final ArrayList<Student> students;
+
+    public Course(String name, String nrc, int group, int credits ) {
         this.name = name;
         this.nrc = nrc;
-        this.classroom = classroom;
-        this.size = size;
-        this.students = new LinkedList<>(); // List void
+        this.group = group;
+        this.credits = credits;
+        this.students = new ArrayList<>(); // List void
     }
 
-    public boolean addStudent (Student student){
-        if (students.size() < size) {
-            students.add(student);
-            return true;
-        }else{
-            return false;
+
+    public String addStudent(String name, String lastName, String code, Career career, Gender gender,
+                             int age, int semester, LocalDate dateAdmission, Image photo, String email, String id) throws QuotaEnrollExceededException,
+            DuplicateStudentException {
+        String message = "";
+        if(totalStu<29){
+            if(!checkForDuplicateStudent(email)){
+                students.add(new Student(name, lastName, code, career, gender, age, semester, dateAdmission, photo, email, id));
+                totalStu++;
+                message += "Estudiante adicionado con exito!" +
+                        "\nEstudiantes matriculados: " + totalStu
+                        + "\nCupo total: " + 29;
+            }
+            else{
+                throw new DuplicateStudentException(email);
+            }
         }
+        else{
+            throw new QuotaEnrollExceededException(totalStu);
+        }
+        return message;
     }
 
-    public LinkedList<Student> getStudents() {
-        return students;
+    public boolean checkForDuplicateStudent(String email) {
+        for (Student student : students) {
+            if (student.getEmail().equals(email)) {
+                return true;
+            }
+        }
+        return false;
     }
+
+
     public String getName() {
         return name;
     }
@@ -46,19 +84,42 @@ public class Course {
         this.nrc = nrc;
     }
 
-    public String getClassroom() {
-        return classroom;
+    public int getGroup() {
+        return group;
     }
 
-    public void setClassroom(String classroom) {
-        this.classroom = classroom;
+    public void setGroup(int group) {
+        this.group = group;
     }
 
-    public int getSize() {
-        return size;
+    public int getTotalStu() {
+        return totalStu;
     }
 
-    public void setSize(int size) {
-        this.size = size;
+    public void setTotalStu(int totalStu) {
+        this.totalStu = totalStu;
+    }
+    public boolean addStudent(Student student){
+        students.add(student);
+        return false;
+    }
+
+    public void removeStudent(Student student){
+        students.remove(student);
+    }
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+    public int getCredits() {
+        return credits;
+    }
+
+    public void setCredits(int credits) {
+        this.credits = credits;
+    }
+
+
+    public static void setInstance(Course instance) {
+        Course.instance = instance;
     }
 }

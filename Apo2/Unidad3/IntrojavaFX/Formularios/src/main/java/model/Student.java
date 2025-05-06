@@ -1,24 +1,26 @@
 package model;
-import java.awt.*;
-import java.util.jar.Attributes;
+import javafx.scene.image.Image;
+import java.time.LocalDate;
 
 public class Student {
 
+    private String id;
     private String name;
     private String lastName;
     private String code;
-    private String career;
-    private String gender;
+    private Career career;
+    private Gender gender;
     private int age;
     private int semester;
-    private String dateAdmission;
-    private Image photo ;
+    private LocalDate dateAdmission;
+    private Image photo;
+    private String email;
 
     // Constructor
-    public Student(String name, String lastName, String code, String career, String gender,
-                   int age, int semester, String dateAdmission, Image photo) {
+    public Student(String name, String lastName, String code, Career career, Gender gender,
+                   int age, int semester, LocalDate dateAdmission, Image photo, String email, String id) {
+        this.id = id;
         this.name = name;
-        this.lastName = lastName;
         this.code = code;
         this.career = career;
         this.gender = gender;
@@ -26,6 +28,8 @@ public class Student {
         this.semester = semester;
         this.dateAdmission = dateAdmission;
         this.photo = photo;
+        this.email = email;
+        this.lastName = lastName;
     }
 
     public String getName() {
@@ -52,19 +56,19 @@ public class Student {
         this.code = code;
     }
 
-    public String getCareer() {
+    public Career getCareer() {
         return career;
     }
 
-    public void setCareer(String career) {
+    public void setCareer(Career career) {
         this.career = career;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
@@ -84,11 +88,11 @@ public class Student {
         this.semester = semester;
     }
 
-    public String getDateAdmission() {
+    public LocalDate getDateAdmission() {
         return dateAdmission;
     }
 
-    public void setDateAdmission(String dateAdmission) {
+    public void setDateAdmission(LocalDate dateAdmission) {
         this.dateAdmission = dateAdmission;
     }
 
@@ -100,4 +104,49 @@ public class Student {
         this.photo = photo;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    private String generateShortId() {
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 7; i++) {
+            int index = (int) (Math.random() * chars.length());
+            sb.append(chars.charAt(index));
+        }
+        return sb.toString();
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,12 +1,13 @@
-module model {
+module ui.ejercicioregistro {
     requires javafx.controls;
     requires javafx.fxml;
-    requires jdk.unsupported.desktop;
+    requires java.desktop;
 
-    opens model to javafx.fxml;
-    opens controller to javafx.fxml;  // <-- NECESARIO para que JavaFX pueda acceder al controlador
-    opens main to javafx.fxml;         // <-- NECESARIO si usas FXML en Main
+
+    opens gui to javafx.fxml;
+    exports gui;
     exports model;
     exports controller;
-    exports main;
+    exports customexceptions;
+    opens controller to javafx.fxml;
 }

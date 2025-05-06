@@ -1,102 +1,123 @@
 package controller;
+
+import customexceptions.DuplicateStudentException;
+import customexceptions.QuotaEnrollExceededException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
-import model.Student;
+import javafx.scene.Node;
+import model.*;
 
 import java.io.File;
-import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
-import java.io.IOException;
-import java.util.Optional;
+import java.time.LocalDate;
 
 public class RegisterController {
 
-    @FXML
-    private TextField firstNameField;
+    @FXML private TextField firstNameField;
+    @FXML private TextField lastNameField;
+    @FXML private TextField ageField;
+    @FXML private ComboBox<String> genderBox;
+    @FXML private ComboBox<String> majorBox;
+    @FXML private TextField semesterField;
+    @FXML private DatePicker admissionDatePicker;
+    @FXML private ImageView imagePreview;
+    @FXML private Button browseImageButton;
+    @FXML private Button registerButton;
+
+    private Course course;
+    private String selectedImagePath = null;
 
     @FXML
-    private TextField lastNameField;
-
-    @FXML
-    private TextField ageField;
-
-    @FXML
-    private ComboBox<String> genderBox;
-
-    @FXML
-    private ComboBox<String> majorBox;
-
-    @FXML
-    private TextField semesterField;
-
-    @FXML
-    private DatePicker admissionDatePicker;
-
-    @FXML
-    private Button registerButton;
-
-    @FXML
-    private Button browseImageButton;
-
-    @FXML
-    private ImageView imagePreview;
-
-    private Image studentPhoto; // Se usará para guardar la imagen cargada
-
-    @FXML
-    public void initialize() {
-        // Inicializar ComboBoxes
-        genderBox.getItems().addAll("Male", "Female", "Other");
-        majorBox.getItems().addAll("System_Engineer", "Telematic_Engineer");
-
-        // Evento del botón de imagen
-        browseImageButton.setOnAction(e -> loadImage());
-
-        // Evento del botón de registrar
-        registerButton.setOnAction(e -> registerStudent());
+    private void initialize() {
+        course = Course.getInstance();  // Singleton
+        genderBox.getItems().addAll("MALE", "FEMALE", "OTHER"); // Enum Gender
+        majorBox.getItems().addAll("SYSTEM_ENGINEERING", "TELEMATIC_ENGINEERING"); // Enum Career
     }
 
-    private void loadImage() {
+    @FXML
+    private void browseImage(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Choose Student Image");
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg")
-        );
-
-        File file = fileChooser.showOpenDialog(null);
+        File file = fileChooser.showOpenDialog(((Node) event.getSource()).getScene().getWindow());
         if (file != null) {
-            studentPhoto = new Image(file.toURI().toString());
-            imagePreview.setImage(studentPhoto);
+            selectedImagePath = file.toURI().toString();
+            imagePreview.setImage(new Image(selectedImagePath));
         }
     }
 
-    private void registerStudent() {
+    @FXML
+    private void registerStudent(ActionEvent event) {
         try {
             String name = firstNameField.getText();
             String lastName = lastNameField.getText();
             int age = Integer.parseInt(ageField.getText());
-            String gender = genderBox.getValue();
-            String major = majorBox.getValue();
+            String genderStr = genderBox.getValue();
+            String majorStr = majorBox.getValue();
             int semester = Integer.parseInt(semesterField.getText());
-            String admissionDate = (admissionDatePicker.getValue() != null)
-                    ? admissionDatePicker.getValue().toString()
-                    : "";
+            LocalDate admissionDate = admissionDatePicker.getValue();
+            Image fxImage = imagePreview.getImage();
+            String email = generateEmail(name, lastName); // Simulado
+            String id = generateShortId(); // Simulado
 
-            // Aquí podrías generar un código aleatorio o pedirlo desde otro campo
-            String code = "A" + System.currentTimeMillis(); // ejemplo temporal
+            if (name.isEmpty() || lastName.isEmpty() || genderStr == null || majorStr == null || admissionDate == null || fxImage == null) {
+                showAlert(Alert.AlertType.WARNING, "Incomplete Data", "All fields must be filled.");
+                return;
+            }
 
-            Student student = new Student(name, lastName, code, major, gender, age, semester, admissionDate, studentPhoto);
-            System.out.println("Student registered: " + student);
+            Career major = Career.valueOf(majorStr);
+            Gender gender = Gender.valueOf(genderStr);
 
-            // Acá deberías añadir el estudiante a un curso o a tu modelo general
+            String result = course.addStudent(
+                    name, lastName, "0000", major, gender,
+                    age, semester, admissionDate, fxImage, email, id
+            );
 
-        } catch (NumberFormatException ex) {
-            System.err.println("Error: Age and Semester must be numbers.");
-        } catch (Exception ex) {
-            System.err.println("Error registering student: " + ex.getMessage());
+            showAlert(Alert.AlertType.INFORMATION, "Success", result);
+            clearForm();
+
+        } catch (NumberFormatException e) {
+            showAlert(Alert.AlertType.ERROR, "Input Error", "Age and Semester must be valid numbers.");
+        } catch (DuplicateStudentException | QuotaEnrollExceededException e) {
+            showAlert(Alert.AlertType.ERROR, "Registration Error", e.getMessage());
+        } catch (Exception e) {
+            showAlert(Alert.AlertType.ERROR, "Unexpected Error", e.getMessage());
+            e.printStackTrace();
         }
+    }
+
+    private void clearForm() {
+        firstNameField.clear();
+        lastNameField.clear();
+        ageField.clear();
+        genderBox.getSelectionModel().clearSelection();
+        majorBox.getSelectionModel().clearSelection();
+        semesterField.clear();
+        admissionDatePicker.setValue(null);
+        imagePreview.setImage(null);
+        selectedImagePath = null;
+    }
+
+    private void showAlert(Alert.AlertType type, String title, String content) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.show();
+    }
+
+    // Métodos utilitarios simulados
+    private String generateEmail(String name, String lastName) {
+        return name.toLowerCase() + "." + lastName.toLowerCase() + "@university.edu";
+    }
+
+    private String generateShortId() {
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 7; i++) {
+            int index = (int) (Math.random() * chars.length());
+            sb.append(chars.charAt(index));
+        }
+        return sb.toString();
     }
 }
