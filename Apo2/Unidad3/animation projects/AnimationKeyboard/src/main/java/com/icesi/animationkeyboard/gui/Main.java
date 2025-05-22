@@ -12,7 +12,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             // Cargar el archivo FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/icesi/animationkeyboard/gui/animation.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/icesi/animationkeyboard/animation.fxml"));
             AnchorPane root = loader.load();
 
             // Crear y mostrar la escena

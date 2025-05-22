@@ -7,6 +7,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.application.Platform;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
+
+import java.io.InputStream;
+
 public class AnimationController {
 
     @FXML
@@ -18,11 +21,11 @@ public class AnimationController {
     private Thread animationThread;
     private volatile boolean running = true;
 
-
+    @FXML
     // Este metodo se ejecuta apenas inicie el controllador
     public void initialize() {
         gc = canvas.getGraphicsContext2D();
-        cat = new Cat(loadAnimations(), 200,200);
+        cat = new Cat(loadAnimations(), 2,2);
         startAnimationThread();
     }
 
@@ -93,20 +96,23 @@ public class AnimationController {
                 case D -> right = false;
             }
         }
-        private Image[] loadAnimations() {
-            Image[] frames = new Image [6];
 
-            for (int dir = 0; dir < 4; dir++) {
-                for (int i = 0; i < 6 ; i++) {
-                    String path = ("/com/icesi/animationkeyboard/assets/cat" + (i + 1) + ".png");
-                    frames[i] = new Image(getClass().getResourceAsStream(path));
-                }
+    private Image[] loadAnimations() {
+        Image[] frames = new Image[6];
+
+        for (int i = 0; i < 6; i++) {
+            String path = "/com/icesi/animationkeyboard/cat" + (i + 1) + ".png";
+            InputStream is = getClass().getResourceAsStream(path);
+            if (is == null) {
+                System.out.println("No se encontró la imagen: " + path);
             }
-            return frames;
+            frames[i] = new Image(is);
         }
+        return frames;
+    }
 
 
-        // detiene el hilo cuando la aplicacion se cierra
+    // detiene el hilo cuando la aplicacion se cierra
             public void stop () {
                 running = false;
                 if (animationThread != null) {
