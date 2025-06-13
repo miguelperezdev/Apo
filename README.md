@@ -1,4 +1,5 @@
-# Algoritmos y Programación (I y II) – Universidad Icesi
+# Algoritmos y Programación (I y II) 
+# Universidad Icesi
 
 Este repositorio contiene el desarrollo de actividades, tareas y proyectos realizados en los cursos de **Algoritmos y Programación I y II** durante el período académico 2024-II y 2025-I.
 
@@ -26,8 +27,8 @@ Curso intermedio de programación orientado a resolver problemas más complejos 
 
 ## 🧑🏻‍🏫 Profesores
 - Juan Marcos Caicedo Mejía (APO 1)
--Juan Valencia Jaramillo (APO 2)
+- Juan Valencia Jaramillo (APO 2)
 
 ## 👨‍💻 Autor
-Miguel Perez .
+Miguel Perez.
 
