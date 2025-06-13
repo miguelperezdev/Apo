@@ -22,5 +22,15 @@ public class Main {
         }
 
         System.out.println("Valor final del contador: " + counter.getCount());
+
+        //---
+        // llamado simple a hilos
+        Hilo hilo = new Hilo();
+        hilo.start();
+
+        Ejecutable ejecutable = new Ejecutable();
+        Thread hilo2 = new Thread(ejecutable);
+        hilo2.start();
+
     }
 }
