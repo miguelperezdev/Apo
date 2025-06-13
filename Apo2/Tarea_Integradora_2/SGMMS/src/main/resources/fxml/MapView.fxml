@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="800" prefHeight="1632.0" prefWidth="2304.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerMap">
+    <children>
+        <Canvas fx:id="canvaMap" height="1632.0" width="2304.0" />
+    </children>
+
+</Pane>

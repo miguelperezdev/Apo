@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="300" prefWidth="400" style="-fx-background-color: linear-gradient(to bottom right, #232526, #414345);" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="controller.MenuController">
+
+    <Label layoutX="100" layoutY="30" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" text="Selecciona una opción" />
+
+    <Button fx:id="mapButton" layoutX="100" layoutY="90" prefWidth="200" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 16px;" text="🗺 Ver Mapa" />
+
+    <Button fx:id="incidentButton" layoutX="100" layoutY="140" prefWidth="200" style="-fx-background-color: #FF5722; -fx-text-fill: white; -fx-font-size: 16px;" text="🚨 Panel de Incidentes" />
+
+    <Button fx:id="monitorButton" layoutX="100" layoutY="190" prefWidth="200" style="-fx-background-color: #03A9F4; -fx-text-fill: white; -fx-font-size: 16px;" text="📊 Panel de Monitoreo" />
+</AnchorPane>

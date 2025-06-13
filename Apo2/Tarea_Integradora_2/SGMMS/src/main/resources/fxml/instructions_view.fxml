@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InstructionsController">
+    <children>
+        <Label text="Bienvenido a PalmiSimulator" textAlignment="CENTER">
+            <VBox.margin>
+                <Insets left="157.0" top="15.0" />
+            </VBox.margin>
+            <font>
+                <Font name="Arial Black" size="18.0" />
+            </font>
+        </Label>
+        <TextArea editable="false" prefHeight="276.0" prefWidth="600.0" text="Objetivo&#10;Asume el rol de operador del Sistema de Gestión y Monitoreo de Movilidad y Seguridad &#10;(SGMMS). Tu tarea es resolver incidentes en tiempo real, garantizando una respuesta rápida &#10;y eficiente en la ciudad.&#10;&#10;Controles&#10;- Moverte en el mapa&#10;W (Arriba), A (Izquierda), S (Abajo), D (Derecha)&#10;&#10;Cambiar escenas -&gt; Tecla (C)&#10;  Centro de Monitoreo&#10;  Mapa de Tráfico&#10;  Panel de Incidentes&#10; &#10;Tipos de Incidentes:&#10;  Accidentes: causados por colisiones entre vehículos autónomos&#10;  Incendios: generados aleatoriamente&#10;  Robos: generados aleatoriamente&#10;&#10;Gestión de Emergencias:&#10; Haz clic en un incidente para ver sus detalles.&#10; Asigna el vehículo más adecuado (ambulancia, patrulla o bomberos) para resolverlo.&#10; Recuerda: cada tipo de vehículo tiene velocidad y prioridad diferente.&#10;&#10;Indicadores en tiempo real:&#10; Número de incidentes activos (separados por tipo)&#10; Puntaje actual según rapidez y eficiencia.&#10;&#10;Gana puntos resolviendo incidentes rápido y con los recursos correctos.&#10;Evita que los incidentes se acumulen para evitar el estres&#10;&#10;NO dejes que la ciudad colapse, y no te dejes colapsar del juego...&#10;&#10;Cuando estés listo, haz clic en &quot;Jugar&quot; para comenzar.&#10;&#10;¡Buena suerte, operador!">
+            <font>
+                <Font name="Arial Black" size="15.0" />
+            </font>
+            <VBox.margin>
+                <Insets top="13.0" />
+            </VBox.margin>
+        </TextArea>
+        <Button fx:id="okeyButton" mnemonicParsing="false" onAction="#closeWindow" text="JUGAR">
+            <font>
+                <Font name="Berlin Sans FB" size="20.0" />
+            </font>
+            <VBox.margin>
+                <Insets left="253.0" top="18.0" />
+            </VBox.margin>
+        </Button>
+    </children>
+</VBox>
